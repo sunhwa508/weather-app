@@ -3,7 +3,7 @@ import { StyledCard } from "./weathercard.styled";
 import { Link } from "react-router-dom";
 import Animatedweather from "./animatedweather";
 import CustomButton from "../customButton/customButton";
-function WeatherCard({ location }) {
+function WeatherCard({ location, isSaveCity }) {
   return (
     <StyledCard>
       {location.main ? (
@@ -19,7 +19,12 @@ function WeatherCard({ location }) {
       ) : (
         false
       )}
-      <CustomButton location={location} />
+
+      {isSaveCity ? (
+        <CustomButton location={location}>REMOVE</CustomButton>
+      ) : (
+        <CustomButton location={location}>SAVE</CustomButton>
+      )}
     </StyledCard>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
-import { StyledDetail } from "./citydetail.styled";
+import { StyledDetail, StyledButton } from "./citydetail.styled";
 export default function CityDetail() {
   const [card, setCard] = useState();
   const history = useHistory();
@@ -33,23 +33,49 @@ export default function CityDetail() {
       });
   }, []);
 
-  console.log(card);
   return (
-    <StyledDetail>
-      {card ? (
-        <div>
-          <h2>{card.name} Detail</h2>
-          <h3>FEELS LIKE {card.main.feels_like} ℃</h3>
-          <h3>MIN {card.main.temp_min} ℃</h3>
-          <h3>MAX {card.main.temp_max} ℃</h3>
-          <h3>HUMIDITY {card.main.humidity} g/m3 </h3>
-          <h3>WIND SPEED {card.wind.speed}</h3>
-          <h3>WIND DEG {card.wind.deg} deg</h3>
-        </div>
-      ) : (
-        false
-      )}
-      <button onClick={handleClick}>◀ back</button>
-    </StyledDetail>
+    <>
+      <StyledDetail>
+        {card ? (
+          <div>
+            <h2>
+              {card.name} IS {card.weather[0].main}
+            </h2>
+
+            <h3>
+              <span> FEELS LIKE</span>
+              <span> {card.main.feels_like} ℃</span>
+            </h3>
+            <h3>
+              <span>MIN</span> <span>{card.main.temp_min} ℃</span>
+            </h3>
+            <h3>
+              <span>MAX</span> <span>{card.main.temp_max} ℃</span>
+            </h3>
+            <h3>
+              <span>HUMIDITY</span> <span>{card.main.humidity} ℃</span>
+            </h3>
+            <h3>
+              <span>WIND SPEED</span> <span>{card.wind.speed}</span>
+            </h3>
+            <h3>
+              <span>visibility</span> <span>{card.visibility}</span>{" "}
+            </h3>
+            <h3>
+              <span>pressure</span> <span>{card.main.pressure}</span>{" "}
+            </h3>
+            <h3>
+              <span>WIND </span>
+              <span>{card.wind.deg}</span>{" "}
+            </h3>
+          </div>
+        ) : (
+          false
+        )}
+      </StyledDetail>
+      <StyledButton>
+        <button onClick={handleClick}>◀ back</button>
+      </StyledButton>
+    </>
   );
 }

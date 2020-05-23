@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useOnClickOutside } from "./hooks";
+import ScrollToTop from "./routeHooks";
 import Main from "./page/main/main";
 import Add from "./page/add/add";
 import { ThemeProvider } from "styled-components";
@@ -11,11 +12,13 @@ import Sidebar from "./component/sidebar/sidebar";
 import CityDetail from "./component/citydetail/citydetail";
 import Header from "./component/header/header";
 import Detail from "./page/details/details";
+import { useHistory } from "react-router-dom";
+
 function App() {
   const [toggle, toggler] = useState(false);
   const node = useRef();
   useOnClickOutside(node, () => toggler(false));
-
+  const history = useHistory();
   return (
     <>
       <Header />
@@ -25,6 +28,7 @@ function App() {
           <Burger toggle={toggle} toggler={toggler} />
           <Sidebar toggle={toggle} toggler={toggler} />
         </div>
+        <ScrollToTop history={history} />
         <Switch>
           <Route exact path="/">
             <Main />

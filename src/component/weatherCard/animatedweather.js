@@ -9,7 +9,6 @@ function Animatedweather({ location }) {
     animate: true,
   };
 
-  console.log(location.weather[0].main);
   return (
     <>
       <h2>{location.name}</h2>
@@ -21,16 +20,9 @@ function Animatedweather({ location }) {
           animate={defaults.animate}
         />
       ) : null}
-      {location.weather[0].main === "Mist" ||
-      location.weather[0].main === "Smoke" ||
-      location.weather[0].main === "Haze" ||
-      location.weather[0].main === "Dust" ||
-      location.weather[0].main === "Fog" ||
-      location.weather[0].main === "Sand" ||
-      location.weather[0].main === "Dust" ||
-      location.weather[0].main === "Ash" ||
-      location.weather[0].main === "Squall" ||
-      location.weather[0].main === "Tornado" ? (
+
+      {location.weather[0].main === "Smoke" ||
+      location.weather[0].main === "Squall" ? (
         <ReactAnimatedWeather
           icon="RAIN"
           color={defaults.color}
@@ -48,7 +40,8 @@ function Animatedweather({ location }) {
         />
       ) : null}
 
-      {location.weather[0].main === "Thunderstorm" ? (
+      {location.weather[0].main === "Thunderstorm" ||
+      location.weather[0].main === "Tornado" ? (
         <ReactAnimatedWeather
           icon="WIND"
           color={defaults.color}
@@ -57,7 +50,31 @@ function Animatedweather({ location }) {
         />
       ) : null}
 
-      {location.weather[0].main === "Clouds" ? (
+      {location.weather[0].main === "Fog" ||
+      location.weather[0].main === "Haze" ||
+      location.weather[0].main === "Mist" ? (
+        <ReactAnimatedWeather
+          icon="FOG"
+          color={defaults.color}
+          size={defaults.size}
+          animate={defaults.animate}
+        />
+      ) : null}
+
+      {location.weather[0].main === "Fog" ||
+      location.weather[0].main === "Haze" ? (
+        <ReactAnimatedWeather
+          icon="SLEET"
+          color={defaults.color}
+          size={defaults.size}
+          animate={defaults.animate}
+        />
+      ) : null}
+
+      {location.weather[0].main === "Clouds" ||
+      location.weather[0].main === "Sand" ||
+      location.weather[0].main === "Dust" ||
+      location.weather[0].main === "Ash" ? (
         <ReactAnimatedWeather
           icon="CLOUDY"
           color={defaults.color}

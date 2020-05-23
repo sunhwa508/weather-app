@@ -11,7 +11,7 @@ function Detail({ location }) {
       {/* <h1>DETAIL</h1> */}
       {/* <button onClick={clickc}>click</button> */}
       {location.map((item) => (
-        <WeatherCard location={item} />
+        <WeatherCard location={item} isSaveCity={true} />
       ))}
       {/* <WeatherCard location={location} /> */}
     </DetailStyled>
