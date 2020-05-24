@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { FirebaseDatabaseProvider } from "@react-firebase/database";
 import React, { useState, useEffect, useRef } from "react";
 import { useOnClickOutside } from "./hooks";
 import Main from "./page/main/main";
@@ -13,7 +13,7 @@ import Sidebar from "./component/sidebar/sidebar";
 import CityDetail from "./component/citydetail/citydetail";
 import Header from "./component/header/header";
 import Detail from "./page/details/details";
-
+import LoginSignup from "./page/loginSignup/loginSignup";
 function App() {
   const [toggle, toggler] = useState(false);
   const [path, setPath] = useState("/");
@@ -46,18 +46,15 @@ function App() {
     font-size: 2rem;
     background-color: white;
     border: none;
-    position: absolute;
+    position: fixed;
     top: 2%;
     right: 5%;
-    z-index: 2;
+    z-index: 3;
     cursor: pointer;
   `;
   return (
     <>
-      <ThemeProvider
-        theme={theme}
-        theme={theme === "light" ? lightTheme : darkTheme}
-      >
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <GlobalStyles />
         <Header />
         <Btnstyle onClick={toggleTheme}>
@@ -65,7 +62,7 @@ function App() {
         </Btnstyle>
         <div ref={node}>
           <Burger toggle={toggle} toggler={toggler} />
-          <Sidebar toggle={toggle} toggler={toggler} />
+          <Sidebar toggle={toggle} toggler={toggler} theme={theme} />
         </div>
         <Switch>
           <Route exact path="/">
@@ -76,6 +73,9 @@ function App() {
           </Route>
           <Route exact path="/detail">
             <Detail />
+          </Route>
+          <Route exact path="/signin">
+            <LoginSignup />
           </Route>
           <Route exact path="/:cityId">
             <CityDetail />

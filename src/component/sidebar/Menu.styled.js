@@ -7,7 +7,7 @@ export const StyledMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
   background: ${({ theme }) => theme.body};
-  z-index: 0;
+  z-index: 2;
   text-align: left;
   padding: 2rem;
   position: fixed;
@@ -29,7 +29,7 @@ export const StyledMenu = styled.nav`
     opacity: 0.3;
     z-index: 0;
   }
-  @media (max-width: ${({ theme }) => theme.text}) {
+  @media (max-width: 600px) {
     width: 100%;
   }
 
@@ -43,7 +43,7 @@ export const StyledMenu = styled.nav`
     text-decoration: none;
     transition: color 0.3s linear;
     z-index: 1;
-    @media (max-width: ${({ theme }) => theme.text}) {
+    @media (max-width: 600px) {
       font-size: 1.5rem;
       text-align: center;
     }

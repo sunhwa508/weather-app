@@ -3,14 +3,14 @@ import "firebase/firestore";
 import "firebase/auth";
 
 const config = {
-  apiKey: "AIzaSyAZEV46O0BzLhuTt6Kd91C51_8hXD2r4xw",
-  authDomain: "sumazon-db.firebaseapp.com",
-  databaseURL: "https://sumazon-db.firebaseio.com",
-  projectId: "sumazon-db",
-  storageBucket: "sumazon-db.appspot.com",
-  messagingSenderId: "662764230446",
-  appId: "1:662764230446:web:5c02a780b7b2fe469b4cbf",
-  measurementId: "G-MXPG3XHQSR",
+  apiKey: "AIzaSyAFU9rFBKI6G_iT_Gv_65ZGe1YDkuxmI_w",
+  authDomain: "weather-app-a7e3c.firebaseapp.com",
+  databaseURL: "https://weather-app-a7e3c.firebaseio.com",
+  projectId: "weather-app-a7e3c",
+  storageBucket: "weather-app-a7e3c.appspot.com",
+  messagingSenderId: "663473543312",
+  appId: "1:663473543312:web:f50017e185230fd47e2015",
+  measurementId: "G-NRJ2XS2JDF",
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {

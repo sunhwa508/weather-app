@@ -8,7 +8,7 @@ export const HeaderDetail = styled.div`
   top: 0;
   left: 0;
   text-align: center;
-  z-index: 1;
+  z-index: 3;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   h1 {
     text-align: center;

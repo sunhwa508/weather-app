@@ -11,9 +11,10 @@ export const StyledDetail = styled.div`
   flex-basis: 1;
 
   h3 {
-    border: 5px solid #ffe9c5;
+    border: 5px solid #c9d6df;
     border-radius: 10px;
     width: 50vw;
+    color: #52616b;
     margin: 10px auto;
     text-align: center;
     padding: 30px;
@@ -34,21 +35,17 @@ export const StyledDetail = styled.div`
 `;
 
 export const StyledButton = styled.div`
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-button{
-  margin:20px 0;
-  font-size: 1.2em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    margin: 20px 0;
+    font-size: 1.2em;
     background-color: #fff;
     padding: 10px 20px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(1, 0.8, 0.25, 1);
     border-radius: 10px;
-  
   }
-
-  }
- 
 `;
