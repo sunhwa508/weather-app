@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
 
 const buttonStyles = css`
-  background-color: pink;
+  background-color: ${({ theme }) => theme.body};
   color: white;
   border: none;
   border-radius: 10px;
   transition: all 0.3s ease;
-  border: 2px solid pink;
+  border: 2px solid ${({ theme }) => theme.body};
   &:hover {
     background-color: #ffacb7;
     color: white;

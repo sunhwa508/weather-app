@@ -40,7 +40,7 @@ export default function Main() {
     setlatitude(latitude);
     setlongitude(longitude);
   }
-
+  console.log(auth);
   return (
     <>
       {auth.currentUser ? (

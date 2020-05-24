@@ -1,36 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { StyledMenu } from "./Menu.styled";
 import { Link } from "react-router-dom";
-import { auth, createUserProfileDocument } from "../../firebase.utils";
+import { auth } from "../../firebase.utils";
 
-const Menu = ({ toggle, theme }) => {
-  let unsubscribeFromAuth = null;
-  const [currentUser, setCurrentUser] = useState(null);
-  useEffect(() => {
-    unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-
-        userRef.onSnapshot((snapShot) => {
-          setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data(),
-          });
-        });
-      }
-      setCurrentUser(userAuth);
-    });
-
-    return function cleanup() {
-      unsubscribeFromAuth();
-    };
-  }, []);
-
+const Menu = ({ toggle, theme, currentUser }) => {
   return (
     <StyledMenu toggle={toggle}>
       <Link to="/" style={{ fontSize: "2rem" }}>
         <span role="img" aria-label="HOME">
-          {theme === "light" ? "✿" : "🌚"}
+          {theme === "light" ? "✿" : "🌚 "}
         </span>
         HOME
       </Link>

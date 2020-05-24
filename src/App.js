@@ -14,14 +14,38 @@ import CityDetail from "./component/citydetail/citydetail";
 import Header from "./component/header/header";
 import Detail from "./page/details/details";
 import LoginSignup from "./page/loginSignup/loginSignup";
+import { auth, createUserProfileDocument } from "./firebase.utils";
+
 function App() {
   const [toggle, toggler] = useState(false);
   const [path, setPath] = useState("/");
   const [theme, setModeTheme] = useState("light");
-
+  const [currentUser, setCurrentUser] = useState(null);
   const node = useRef();
   useOnClickOutside(node, () => toggler(false));
   const history = useHistory();
+
+  let unsubscribeFromAuth = null;
+
+  useEffect(() => {
+    unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot((snapShot) => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data(),
+          });
+        });
+      }
+      setCurrentUser(userAuth);
+    });
+
+    return function cleanup() {
+      unsubscribeFromAuth();
+    };
+  }, [currentUser]);
 
   const toggleTheme = () => {
     // if the theme is not light, then set it to dark
@@ -62,7 +86,12 @@ function App() {
         </Btnstyle>
         <div ref={node}>
           <Burger toggle={toggle} toggler={toggler} />
-          <Sidebar toggle={toggle} toggler={toggler} theme={theme} />
+          <Sidebar
+            currentUser={currentUser}
+            toggle={toggle}
+            toggler={toggler}
+            theme={theme}
+          />
         </div>
         <Switch>
           <Route exact path="/">
