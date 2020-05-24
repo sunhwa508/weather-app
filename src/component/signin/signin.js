@@ -25,8 +25,8 @@ export default function Signin() {
 
   return (
     <StyledLogin>
-      <h2>I already have an account</h2>
-      <span>Sign in with your email and password</span>
+      <h2>이미 계정이 있다면 🔑</h2>
+      <span>로그인 정보를 입력하세요 </span>
       <form onSubmit={handleSubmit}>
         <Input
           name="email"

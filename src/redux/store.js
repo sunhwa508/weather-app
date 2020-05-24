@@ -1,7 +1,6 @@
-import { createStore, combineReducers } from "redux";
-import { reducer, userReducer } from "./reducer";
+import { createStore } from "redux";
+import { reducer } from "./reducer";
 
-const rootReducer = combineReducers(reducer, userReducer);
-const store = createStore(rootReducer);
+const store = createStore(reducer);
 
 export default store;

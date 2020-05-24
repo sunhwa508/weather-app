@@ -45,8 +45,8 @@ export default function Signup() {
 
   return (
     <SignUpstyled>
-      <h2 className="title"> I do not have a account</h2>
-      <span>Sign up with your email and password</span>
+      <h2 className="title"> 로그인이 필요한 서비스입니다 🔐</h2>
+      <span>회원이 아니시면 회원가입을 해주세요.</span>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <Input
           type="text"

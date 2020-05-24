@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { StyledMenu } from "./Menu.styled";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
 import { auth, createUserProfileDocument } from "../../firebase.utils";
-import { setCurrentUser } from "../../redux/action";
 
-const Menu = ({ setCurrentUser, currentUser, toggle, theme }) => {
+const Menu = ({ toggle, theme }) => {
   let unsubscribeFromAuth = null;
-
+  const [currentUser, setCurrentUser] = useState(null);
   useEffect(() => {
     unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
@@ -20,7 +18,6 @@ const Menu = ({ setCurrentUser, currentUser, toggle, theme }) => {
           });
         });
       }
-      console.log(currentUser);
       setCurrentUser(userAuth);
     });
 
@@ -33,7 +30,7 @@ const Menu = ({ setCurrentUser, currentUser, toggle, theme }) => {
     <StyledMenu toggle={toggle}>
       <Link to="/" style={{ fontSize: "2rem" }}>
         <span role="img" aria-label="HOME">
-          {currentUser.length === 1 ? "✿" : "🌚"}
+          {theme === "light" ? "✿" : "🌚"}
         </span>
         HOME
       </Link>
@@ -49,26 +46,29 @@ const Menu = ({ setCurrentUser, currentUser, toggle, theme }) => {
         </span>
         DETAIL
       </Link>
-      <Link to="/signin" style={{ fontSize: "2rem" }}>
-        <span role="img" aria-label="LOGIN">
-          {theme === "light" ? "✿" : "🌚 "}
-        </span>
-        LOGIN
-      </Link>
+
+      {currentUser ? (
+        <Link
+          as="div"
+          onClick={() => auth.signOut()}
+          style={{ fontSize: "2rem" }}
+          to="/"
+        >
+          <span role="img" aria-label="LOGIN">
+            {theme === "light" ? "✿" : "🌚 "}
+          </span>
+          LOGOUT
+        </Link>
+      ) : (
+        <Link to="/signin" style={{ fontSize: "2rem" }}>
+          <span role="img" aria-label="LOGIN">
+            {theme === "light" ? "✿" : "🌚 "}
+          </span>
+          LOGIN
+        </Link>
+      )}
     </StyledMenu>
   );
 };
 
-function mapDispatchToProps(dispatch) {
-  return {
-    setCurrentUser: (user) => dispatch(setCurrentUser(user)),
-  };
-}
-
-const mapStateToProps = (user) => {
-  return {
-    currentUser: user,
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Menu);
+export default Menu;
