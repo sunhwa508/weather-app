@@ -6,7 +6,8 @@ export const StyledMenu = styled.nav`
   height: 100%;
   flex-direction: column;
   justify-content: center;
-  background-color: ${({ theme }) => theme.primaryLight};
+  background: ${({ theme }) => theme.body};
+  z-index: 0;
   text-align: left;
   padding: 2rem;
   position: fixed;
@@ -17,7 +18,18 @@ export const StyledMenu = styled.nav`
   transform: ${({ toggle }) =>
     toggle ? "translateX(0)" : "translateX(-100%)"};
 
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  &::after {
+    content: "";
+    background: #f6f6f6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    z-index: 0;
+  }
+  @media (max-width: ${({ theme }) => theme.text}) {
     width: 100%;
   }
 
@@ -27,11 +39,11 @@ export const StyledMenu = styled.nav`
     padding: 1.2rem 0;
     font-weight: bold;
     letter-spacing: 0.3rem;
-    color: white;
+    color: ${({ theme }) => theme.text};
     text-decoration: none;
     transition: color 0.3s linear;
-
-    @media (max-width: ${({ theme }) => theme.mobile}) {
+    z-index: 1;
+    @media (max-width: ${({ theme }) => theme.text}) {
       font-size: 1.5rem;
       text-align: center;
     }

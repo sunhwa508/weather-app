@@ -24,14 +24,14 @@ export const StyledCard = styled.div`
     margin: 0;
     padding: 5px;
     font-size: 2rem;
-    color: ${({ theme }) => theme.primaryDark};
+    color: #444f5a;
     margin: 20px 0;
   }
   h3 {
     width: 100%;
     padding: 2px;
     margin: 5px;
-    color: ${({ theme }) => theme.primaryDark};
+    color: #444f5a;
     border-radius: 10px;
     font-size: 1.3rem;
     margin: 10px 0;

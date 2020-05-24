@@ -14,8 +14,9 @@ export const GlobalStyles = createGlobalStyle`
   body {
     align-items: center;
     font-family: 'Roboto', sans-serif;
-    background: #ffe9c5;
-    color: #d63447;
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
+     transition: all 0.25s linear;
     display: flex;
     height: 100vh;
     justify-content: center;
