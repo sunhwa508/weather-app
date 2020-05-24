@@ -1,14 +1,16 @@
 import styled, { css } from "styled-components";
 
 const buttonStyles = css`
-  background-color: black;
+  background-color: pink;
   color: white;
   border: none;
-
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid pink;
   &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+    background-color: #ffacb7;
+    color: white;
+    border: 2px solid #ffacb7;
   }
 `;
 
@@ -28,10 +30,12 @@ const googleSignInStyles = css`
   background-color: #4285f4;
   color: white;
   min-width: 130px;
+  border-radius: 10px;
   &:hover {
-    background-color: #357ae8;
+    background-color: #397ae8;
     border: none;
-  }
+
+   
 `;
 const getButtonStyles = (props) => {
   if (props.isGoogleSignIn) {
@@ -52,7 +56,7 @@ export const CustomButtonContainer = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  font-family: "Righteous", cursive;
+
   border: none;
 
   ${getButtonStyles};

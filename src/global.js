@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
   *, *::after, *::before {
     box-sizing: border-box;
   }
-  p,h2,h1{
+  p,h2,h1,button{
     font-family: 'Roboto', sans-serif;
   }
   body {
