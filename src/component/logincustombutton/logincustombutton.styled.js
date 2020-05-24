@@ -34,8 +34,7 @@ const googleSignInStyles = css`
   &:hover {
     background-color: #397ae8;
     border: none;
-
-   
+  }
 `;
 const getButtonStyles = (props) => {
   if (props.isGoogleSignIn) {
@@ -56,7 +55,6 @@ export const CustomButtonContainer = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-
   border: none;
 
   ${getButtonStyles};

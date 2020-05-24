@@ -1,5 +1,6 @@
 export const ADDCART = "ADDCART";
 export const REMOVECART = "REMOVECART";
+export const SETCURRENTUSER = "SETCURRENTUSER";
 
 export const addCart = (item) => {
   return {
@@ -12,5 +13,12 @@ export const removeCart = (item) => {
   return {
     type: REMOVECART,
     payload: item,
+  };
+};
+
+export const setCurrentUser = (user) => {
+  return {
+    type: SETCURRENTUSER,
+    payload: user,
   };
 };

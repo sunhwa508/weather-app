@@ -1,5 +1,6 @@
 import * as actions from "./action";
 
+//SavedReducer
 export const reducer = (location = [], action) => {
   switch (action.type) {
     case actions.ADDCART:
@@ -19,5 +20,18 @@ export const reducer = (location = [], action) => {
 
     default:
       return location;
+  }
+};
+
+//userReducer
+export const userReducer = (currentUser = null, action) => {
+  switch (action.type) {
+    case actions.SETCURRENTUSER:
+      return {
+        ...currentUser,
+        currentUser: action.payload,
+      };
+    default:
+      return currentUser;
   }
 };
