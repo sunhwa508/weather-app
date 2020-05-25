@@ -27,24 +27,36 @@ const invertedButtonStyles = css`
 `;
 
 const googleSignInStyles = css`
-  background-color: #4285f4;
   color: white;
-  min-width: 130px;
+  font-size: 25px;
   border-radius: 10px;
   &:hover {
     background-color: #397ae8;
     border: none;
   }
 `;
+
+const githunSignInstyles = css`
+  color: white;
+  font-size: 25px;
+  border-radius: 10px;
+  &:hover {
+    background-color: #000;
+    border: none;
+  }
+`;
+
 const getButtonStyles = (props) => {
   if (props.isGoogleSignIn) {
     return googleSignInStyles;
+  } else if (props.isGithubSignIn) {
+    return githunSignInstyles;
   }
   return props.inverted ? invertedButtonStyles : buttonStyles;
 };
 
 export const CustomButtonContainer = styled.button`
-  min-width: 130px;
+  min-width: 100px;
   width: auto;
   height: 50px;
   line-height: 50px;

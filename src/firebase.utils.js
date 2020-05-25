@@ -20,8 +20,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
   const snapShot = await userRef.get();
   const collectionSnapshot = await collectionRef.get();
-  console.log(auth);
-  console.log({ collection: collectionSnapshot.docs.map((doc) => doc.data()) });
+
+  // console.log({ collection: collectionSnapshot.docs.map((doc) => doc.data()) });
 
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
@@ -70,7 +70,6 @@ export default firebase;
 export const GithubProvider = new firebase.auth.GithubAuthProvider();
 
 export function githubSignin() {
-  console.log(auth);
   firebase
     .auth()
     .signInWithPopup(GithubProvider)
@@ -105,3 +104,54 @@ export function githubSignout() {
       }
     );
 }
+
+//FacebookProvider
+
+export const FacebookProvider = new firebase.auth.FacebookAuthProvider();
+
+export function facebookSignIn() {
+  firebase
+    .auth()
+    .signInWithPopup(FacebookProvider)
+    .then(function (result) {
+      var token = result.credential.accessToken;
+      var user = result.user;
+    })
+    .catch(function (error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      var email = error.email;
+      var credential = error.credential;
+      console.log(error.code);
+      console.log(error.message);
+    });
+}
+
+// firebase
+//   .auth()
+//   .getRedirectResult()
+//   .then(function (result) {
+//     if (result.credential) {
+//       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+//       var token = result.credential.accessToken;
+//       // ...
+//     }
+//     // The signed-in user info.
+//     var user = result.user;
+//   })
+//   .catch(function (error) {
+//     // Handle Errors here.
+//     var errorCode = error.code;
+//     var errorMessage = error.message;
+//     // The email of the user's account used.
+//     var email = error.email;
+//     // The firebase.auth.AuthCredential type that was used.
+//     var credential = error.credential;
+//     // ...
+//   });
+
+// firebase.auth().signInWithRedirect(FacebookProvider);
+
+// const responseFacebook = (response) => {
+//   console.log(response);
+// };

@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import Input from "../input/input";
 import CustomButton from "../logincustombutton/logincustombutton";
-import { auth, signInWithGoogle } from "../../firebase.utils";
+import {
+  auth,
+  signInWithGoogle,
+  githubSignin,
+  facebookSignIn,
+} from "../../firebase.utils";
 import { StyledLogin } from "./signin.styled";
 
 export default function Signin() {
@@ -47,7 +52,13 @@ export default function Signin() {
         <div className="buttons">
           <CustomButton type="submit">Sign In</CustomButton>
           <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-            Sign in with Google
+            <i class="fab fa-google"></i>
+          </CustomButton>
+          <CustomButton onClick={githubSignin} isGithubSignIn>
+            <i class="fab fa-github"></i>{" "}
+          </CustomButton>
+          <CustomButton onClick={facebookSignIn} isFacebookSignIn>
+            <i class="fab fa-facebook"></i>{" "}
           </CustomButton>
         </div>
       </form>
