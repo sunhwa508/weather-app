@@ -60,7 +60,48 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
+//goggle provider
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 export default firebase;
+
+//Github provider
+export const GithubProvider = new firebase.auth.GithubAuthProvider();
+
+export function githubSignin() {
+  console.log(auth);
+  firebase
+    .auth()
+    .signInWithPopup(GithubProvider)
+
+    .then(function (result) {
+      var token = result.credential.accessToken;
+      var user = result.user;
+
+      console.log(token);
+      console.log(user);
+    })
+    .catch(function (error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      console.log(error.code);
+      console.log(error.message);
+    });
+}
+
+export function githubSignout() {
+  firebase
+    .auth()
+    .signOut()
+
+    .then(
+      function () {
+        console.log("Signout successful!");
+      },
+      function (error) {
+        console.log("Signout failed");
+      }
+    );
+}

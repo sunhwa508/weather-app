@@ -1,3 +1,4 @@
+import firebase from "firebase/app";
 import styled from "styled-components";
 import { FirebaseDatabaseProvider } from "@react-firebase/database";
 import React, { useState, useEffect, useRef } from "react";
@@ -26,6 +27,46 @@ function App() {
   const history = useHistory();
 
   let unsubscribeFromAuth = null;
+
+  //Github provider
+  const GithubProvider = new firebase.auth.GithubAuthProvider();
+
+  function githubSignin() {
+    console.log(auth);
+    firebase
+      .auth()
+      .signInWithPopup(GithubProvider)
+
+      .then(function (result) {
+        var token = result.credential.accessToken;
+        var user = result.user;
+
+        console.log(token);
+        console.log(user);
+      })
+      .catch(function (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        console.log(error.code);
+        console.log(error.message);
+      });
+  }
+
+  function githubSignout() {
+    firebase
+      .auth()
+      .signOut()
+
+      .then(
+        function () {
+          console.log("Signout successful!");
+        },
+        function (error) {
+          console.log("Signout failed");
+        }
+      );
+  }
 
   useEffect(() => {
     unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
@@ -81,6 +122,8 @@ function App() {
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <GlobalStyles />
         <Header />
+        <button onclick={GithubProvider}>Github Signin</button>
+        <button onclick="githubSignout()">Github Signout</button>
         <Btnstyle onClick={toggleTheme}>
           {theme === "light" ? "🌛" : "🌞"}
         </Btnstyle>
