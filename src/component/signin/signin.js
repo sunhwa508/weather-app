@@ -52,13 +52,13 @@ export default function Signin() {
         <div className="buttons">
           <CustomButton type="submit">Sign In</CustomButton>
           <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-            <i class="fab fa-google"></i>
+            google
           </CustomButton>
           <CustomButton onClick={githubSignin} isGithubSignIn>
-            <i class="fab fa-github"></i>{" "}
+            github
           </CustomButton>
           <CustomButton onClick={facebookSignIn} isGoogleSignIn>
-            <i class="fab fa-facebook"></i>{" "}
+            facebook
           </CustomButton>
         </div>
       </form>
