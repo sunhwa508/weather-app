@@ -57,7 +57,7 @@ export default function Signin() {
           <CustomButton onClick={githubSignin} isGithubSignIn>
             <i class="fab fa-github"></i>{" "}
           </CustomButton>
-          <CustomButton onClick={facebookSignIn} isFacebookSignIn>
+          <CustomButton onClick={facebookSignIn} isGoogleSignIn>
             <i class="fab fa-facebook"></i>{" "}
           </CustomButton>
         </div>
