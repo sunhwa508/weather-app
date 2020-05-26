@@ -16,9 +16,3 @@ export const removeCart = (item) => {
   };
 };
 
-export const setCurrentUser = (user) => {
-  return {
-    type: SETCURRENTUSER,
-    payload: user,
-  };
-};

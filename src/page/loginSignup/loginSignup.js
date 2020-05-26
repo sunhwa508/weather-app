@@ -7,7 +7,6 @@ export default function loginSignup() {
   return (
     <LoginPagestyled>
       <Signin />
-
       <SignUp />
     </LoginPagestyled>
   );

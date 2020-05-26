@@ -13,7 +13,6 @@ const buttonStyles = css`
     border: 2px solid #ffacb7;
   }
 `;
-
 const invertedButtonStyles = css`
   background-color: white;
   color: black;
@@ -27,12 +26,17 @@ const invertedButtonStyles = css`
 `;
 
 const googleSignInStyles = css`
-  color: white;
-  font-size: 25px;
-  border-radius: 10px;
+  color: gray;
+  font-size: 3rem;
+  background-color: transparent;
+  width: 50px;
+
   &:hover {
-    background-color: #397ae8;
+    color: black;
     border: none;
+  }
+  @media screen and (max-width: 1000px) {
+    font-size: 2rem;
   }
 `;
 
@@ -43,6 +47,9 @@ const githunSignInstyles = css`
   &:hover {
     background-color: #000;
     border: none;
+  }
+  @media screen and (max-width: 1000px) {
+    font-size: 0.8rem;
   }
 `;
 
@@ -60,14 +67,17 @@ export const CustomButtonContainer = styled.button`
   width: auto;
   height: 50px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
   font-size: 14px;
   text-transform: uppercase;
-  font-weight: bolder;
   cursor: pointer;
   display: flex;
   justify-content: center;
   border: none;
+
+  @media screen and (max-width: 1000px) {
+    min-width: 80px;
+    font-size: 0.8rem;
+  }
 
   ${getButtonStyles};
 `;

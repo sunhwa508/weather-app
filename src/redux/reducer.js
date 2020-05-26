@@ -23,15 +23,15 @@ export const reducer = (location = [], action) => {
   }
 };
 
-//userReducer
-export const userReducer = (currentUser = null, action) => {
-  switch (action.type) {
-    case actions.SETCURRENTUSER:
-      return {
-        ...currentUser,
-        currentUser: action.payload,
-      };
-    default:
-      return currentUser;
-  }
-};
+// //userReducer
+// export const userReducer = (currentUser = null, action) => {
+//   switch (action.type) {
+//     case actions.SETCURRENTUSER:
+//       return {
+//         ...currentUser,
+//         currentUser: action.payload,
+//       };
+//     default:
+//       return currentUser;
+//   }
+// };

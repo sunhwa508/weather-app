@@ -14,7 +14,5 @@ export const HeaderDetail = styled.div`
     text-align: center;
     text-transform: uppercase;
   }
-  h2 {
-    vertical-align: center;
-  }
+
 `;
