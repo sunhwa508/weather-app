@@ -24,10 +24,6 @@ function App() {
   useOnClickOutside(node, () => toggler(false));
   const history = useHistory();
 
-  useEffect(() => {
-    window.location.href = "https://sunhwa508.github.io/weather-app/";
-  }, [currentUser]);
-
   let unsubscribeFromAuth = null;
 
   useEffect(() => {
