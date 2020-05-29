@@ -120,7 +120,7 @@ export const useOnClickOutside = (ref, handler) => {
 
 ##App.js
 //(useRef 노드를 burger , sidebar components에 감싸주어, 앞서 만든 customhooks의 이벤트타켓을 인지할 수 있게 해준다.
-  <pre><code>
+
   <div ref={node}>
           <Burger toggle={toggle} toggler={toggler} />
           <Sidebar
@@ -130,7 +130,7 @@ export const useOnClickOutside = (ref, handler) => {
             theme={theme}
           />
         </div>
-</pre></code>
+
 
 
 ## using styled-components GlobalStyle을 이용한 DakrMode구현
