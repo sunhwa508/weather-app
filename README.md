@@ -170,6 +170,11 @@ export const GlobalStyles = createGlobalStyle<br/>
   };<br/>
 <br/>
 
+
+## signin/signup부분은 이곳을 참고하세요 😗😗
+https://github.com/sunhwa508/E-commercial
+
+
 ## ✔Deployment
 "homepage": https://sunhwa508.github.io/weather-app/
 "predeploy": "npm run-script build",
