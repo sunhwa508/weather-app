@@ -136,16 +136,16 @@ export const useOnClickOutside = (ref, handler) => {
 ## using styled-components GlobalStyle을 이용한 DakrMode구현
 styled-components 에서 제공하는 createGlobalStyle을 이용하면 아주 쉽게 darkmode를 설정할수있다. 
 
-Theme.js
-export const lightTheme = {
-  body: "#ffc8c8",
-  text: "#ff9999",
-};
-export const darkTheme = {
-  body: "#444f5a",
-  text: "#ff9999",
-};
-lightTheme/darkTheme 에서 사용할 body,text 색을 위에 같이 지정해준후,
+Theme.js<br/>
+export const lightTheme = {<br/>
+  body: "#ffc8c8",<br/>
+  text: "#ff9999",<br/>
+};<br/>
+export const darkTheme = {<br/>
+  body: "#444f5a",<br/>
+  text: "#ff9999",<br/>
+};<br/>
+lightTheme/darkTheme 에서 사용할 body,text 색을 위에 같이 지정해준후,<br/>
 
 import { createGlobalStyle } from "styled-components";
 
