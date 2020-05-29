@@ -1,6 +1,6 @@
 
 
-<h1>🌛IT IS HOT ? FOR COLD 위치추적! 날씨앱🌞</h1>
+<h1>🌛IT IS HOT ? OR COLD 위치추적! 날씨앱🌞</h1>
 
 
 ## Available Scripts
