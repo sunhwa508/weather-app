@@ -147,28 +147,28 @@ export const darkTheme = {<br/>
 };<br/>
 lightTheme/darkTheme 에서 사용할 body,text 색을 위에 같이 지정해준후,<br/>
 
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";<br/>
 
-export const GlobalStyles = createGlobalStyle
+export const GlobalStyles = createGlobalStyle<br/>
 
-  body {
-    background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
-  }
+  body {<br/>
+    background: ${({ theme }) => theme.body};<br/>
+    color: ${({ theme }) => theme.text};<br/>
+  }<br/>
   ;
 지정해줄 스타일 영역에 위와같이 theme(light/dark)의 색만 지정해주면 된다.<br/>
 여기서 사용할 Theme의 toggle함수는 우측상단에 있는 버튼이 있는 컴포넌트에서 구현하였다.<br/>
 
-  const toggleTheme = () => {
-   //theme이 light이면 dark로 
-    if (theme === "light") {
-      setModeTheme("dark");
-      // 그렇지 않으면 light으로 
-    } else {
-      setModeTheme("light");
-    }
-  };
-
+  const toggleTheme = () => {<br/>
+   //theme이 light이면 dark로 <br/>
+    if (theme === "light") {<br/>
+      setModeTheme("dark");<br/>
+      // 그렇지 않으면 light으로 <br/>
+    } else {<br/>
+      setModeTheme("light");<br/>
+    }<br/>
+  };<br/>
+<br/>
 
 ## ✔Deployment
 "homepage": https://sunhwa508.github.io/weather-app/
