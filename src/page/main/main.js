@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Mainstyled } from "./main.style";
-
 import WeatherCard from "../../component/weatherCard/weathercard";
 import { auth } from "../../firebase.utils";
 import { locationApi } from "../../api";
