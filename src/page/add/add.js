@@ -30,6 +30,7 @@ export default function Add() {
         .then((data) => {
           setSearched(data.data);
         })
+
         .catch((error) => {
           console.log("error");
           setSearched("");

@@ -6,7 +6,13 @@ import Add from "./page/add/add";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./global";
 import { lightTheme, darkTheme } from "./theme";
-import { Switch, Route, withRouter, useHistory } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  withRouter,
+  useHistory,
+  Redirect,
+} from "react-router-dom";
 import Burger from "./component/burger/burger";
 import Sidebar from "./component/sidebar/sidebar";
 import CityDetail from "./component/citydetail/citydetail";
@@ -103,7 +109,7 @@ function App() {
             <Detail />
           </Route>
           <Route exact path="/signin">
-            <LoginSignup />
+            {currentUser ? <Redirect exact to="/" /> : <LoginSignup />}
           </Route>
           <Route exact path="/:cityId">
             <CityDetail />

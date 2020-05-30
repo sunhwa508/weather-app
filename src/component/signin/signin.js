@@ -19,7 +19,7 @@ export default function Signin() {
       await auth.signInWithEmailAndPassword(user.email, user.password);
       setUser({ email: "", password: "" });
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 
