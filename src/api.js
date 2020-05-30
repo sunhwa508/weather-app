@@ -10,19 +10,19 @@ const api = axios.create({
 
 export const locationApi = {
   yourLocation: (longitude, latitude) =>
-    api
-      .get("/", {
-        params: {
-          lat: latitude,
-          lon: longitude,
-        },
-      })
+    api.get("/", {
+      params: {
+        lat: latitude,
+        lon: longitude,
+      },
+    }),
+};
 
-      .then((data) => {
-        const Location = data.data;
-      })
-
-      .catch((error) => {
-        console.log("error");
-      }),
+export const searchApi = {
+  searchedApi: (input) =>
+    api.get("/", {
+      params: {
+        q: input,
+      },
+    }),
 };

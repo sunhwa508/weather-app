@@ -3,6 +3,7 @@ import { Mainstyled } from "./main.style";
 import WeatherCard from "../../component/weatherCard/weathercard";
 import { auth } from "../../firebase.utils";
 import { locationApi } from "../../api";
+
 export default function Main() {
   const [latitude, setlatitude] = useState(0);
   const [longitude, setlongitude] = useState(0);
@@ -11,8 +12,14 @@ export default function Main() {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(handleGeoSucces);
-    locationApi.yourLocation(longitude, latitude);
-    setLocation(locationApi.Location);
+    locationApi
+      .yourLocation(longitude, latitude)
+      .then((data) => {
+        setLocation(data.data);
+      })
+      .catch((error) => {
+        console.log("error");
+      });
   }, [latitude, longitude]);
 
   function handleGeoSucces(position) {
@@ -25,12 +32,16 @@ export default function Main() {
     <>
       {auth.currentUser ? (
         <Mainstyled>
-          {auth.currentUser.email.slice(0, auth.currentUser.email.indexOf("@"))}
+          {" "}
+          {auth.currentUser.email.slice(
+            0,
+            auth.currentUser.email.indexOf("@")
+          )}{" "}
           님의 <br />
-          Weather forecast
+          Weather forecast{" "}
         </Mainstyled>
       ) : (
-        <Mainstyled>로그인을 해주세요</Mainstyled>
+        <Mainstyled> 로그인을 해주세요</Mainstyled>
       )}
 
       {/* <h1 style={{ color: "#f67280" }}>TODAY'S WEATHER</h1> */}

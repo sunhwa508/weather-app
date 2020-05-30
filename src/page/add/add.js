@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { StyledMain } from "./add.styled";
 import WeatherCard from "../../component/weatherCard/weathercard";
+import { searchApi } from "../../api";
 
 export default function Add() {
   const [searched, setSearched] = useState("");
   const [input, setInput] = useState();
-
-  const api = axios.create({
-    baseURL: "https://api.openweathermap.org/data/2.5/weather/",
-    params: {
-      appid: "c464608a0909ecb7b521f7e1cde53200",
-      units: "metric",
-    },
-  });
 
   function handleChange(event) {
     setInput(event.target.value);
@@ -21,12 +13,8 @@ export default function Add() {
 
   function handleKeyPress(event) {
     if (event.which === 13) {
-      api
-        .get("/", {
-          params: {
-            q: input,
-          },
-        })
+      searchApi
+        .searchedApi(input)
         .then((data) => {
           setSearched(data.data);
         })
