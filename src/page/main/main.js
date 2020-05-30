@@ -1,37 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Mainstyled } from "./main.style";
-import axios from "axios";
+
 import WeatherCard from "../../component/weatherCard/weathercard";
 import { auth } from "../../firebase.utils";
+import { locationApi } from "../../api";
 export default function Main() {
   const [latitude, setlatitude] = useState(0);
   const [longitude, setlongitude] = useState(0);
   const [location, setLocation] = useState({});
   const [city, setCity] = useState();
 
-  const api = axios.create({
-    baseURL: "https://api.openweathermap.org/data/2.5/weather/",
-    params: {
-      appid: "c464608a0909ecb7b521f7e1cde53200",
-      units: "metric",
-    },
-  });
-
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(handleGeoSucces);
-    api
-      .get("/", {
-        params: {
-          lat: latitude,
-          lon: longitude,
-        },
-      })
-      .then((data) => {
-        setLocation(data.data);
-      })
-      .catch((error) => {
-        console.log("error");
-      });
+    locationApi.yourLocation(longitude, latitude);
+    setLocation(locationApi.Location);
   }, [latitude, longitude]);
 
   function handleGeoSucces(position) {
