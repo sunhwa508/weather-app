@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <Link to="/" style={{ color: "black" }}>
       <HeaderDetail>
-        <h1>WEATHERS</h1>
+        <h1>WEATHER"S"</h1>
       </HeaderDetail>
     </Link>
   );
