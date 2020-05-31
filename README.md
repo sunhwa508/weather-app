@@ -32,10 +32,16 @@ $ git checkout nameofbranch<br/>
 ## Getting Started
 
 ### ✔apiurl/ apikey 관리 컴포넌트
+
+코드리뷰를 받은 후,, 내 코드는 내가 봐도 참 답이 없는 코드였다<br/>
+쓸대없이 axios통신하는 컴포넌트가 3개, url과 내apiId다 이곳저곳에서 남발되고 있었던 것,<br/>
+기업에서 우대하는 코드리뷰 경험이 뭘 뜻하듯이 새삼 깨달았다.<br/>
+기능은 누구나 구현할 수 있다. <br/>
+하지만 기업은 알 고 있엇다, 성능좋은, 유지보수가 편한 코드를 더 필요할것이란 것을..<br/>
 <div>
-![image]<img src="https://user-images.githubusercontent.com/61695175/83343730-15a7c000-a339-11ea-84bc-a157adf8775d.png" width="200" height="400">
-![image]<img src="https://user-images.githubusercontent.com/61695175/83343752-51428a00-a339-11ea-9c0f-4d1c9022af0f.png" width="200" height="400">
- ![image]<img src="https://user-images.githubusercontent.com/61695175/83345005-1cd6ca00-a349-11ea-8669-f8e179c29b9c.png" width="200" height="400">
+]<img src="https://user-images.githubusercontent.com/61695175/83343730-15a7c000-a339-11ea-84bc-a157adf8775d.png" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/61695175/83343752-51428a00-a339-11ea-9c0f-4d1c9022af0f.png" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/61695175/83345005-1cd6ca00-a349-11ea-8669-f8e179c29b9c.png" width="200" height="400">
 
 <div/>
 기존 메인화면과 Search페이지에 따로따로 관리되던 axios와 중복되어 있던 url,
