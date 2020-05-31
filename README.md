@@ -76,6 +76,9 @@ export const searchApi = {
 
 이렇게 api들을 한군데 모아두니 상대적으로 무겁게 돌아갈수 있는 axios들을 이곳저곳에서 import할 필요도 없고, 
 유지보수하기도 간편하며, 코드가 더욱깔끔하고 알아보기 쉬워졌다.
+🔐
+![image](https://user-images.githubusercontent.com/61695175/83343934-b1d2c680-a33b-11ea-8b49-c0241a190ca9.png)
+![image](https://user-images.githubusercontent.com/61695175/83343940-c6af5a00-a33b-11ea-9c71-90349ae1ad6d.png)
 
 ## ✔Acknowledgments
 
