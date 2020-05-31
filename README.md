@@ -110,8 +110,8 @@ export const detailApi = {
 
 그래서 미리미리연습해두자, 불필요한 요소들 상수로 묶어 관리하기 theme같은 방법으로 말이다.
 
-<code><pre>
-    <StyledMenu toggle={toggle}>
+<code>
+
       <Link to="/" style={{ fontSize: "2rem" }}>
         <span role="img" aria-label="HOME">
           {theme === "light" ? "✿" : "🌚 "}
@@ -152,7 +152,7 @@ export const detailApi = {
         </Link>
       )}
     </StyledMenu>
-</pre></code>
+</code>
 
 간단히 기존에 darkmode를 구현하기 위해 생성해두었던 theme.js 에 icon을 하나 추가한다. 
 
@@ -181,7 +181,7 @@ export const darkTheme = {
 
 이렇게 정의함으로써, 갯수와 제한없이 2초이내로 icon자리에 들어가는 모든 가능성들은 한번의 수정으로 전체를 다 바꿀 수 있게 되었다 ^^ <br />
 
-<code><pre>
+<code>
  const icon = theme === "light" ? lightTheme.icon : darkTheme.icon;
 
   return (
@@ -225,5 +225,5 @@ export const darkTheme = {
         </Link>
       )}
     </StyledMenu>
-</pre></code>
+</code>
 ## ✔Acknowledgments
