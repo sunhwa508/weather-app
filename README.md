@@ -23,10 +23,11 @@ $ git checkout nameofbranch<br/>
 
 ## Available Scripts
 **문제점파악
-1. apiurl/ apikey등은 main page, app.js가 아닌 다른 페이지에서 따로 관리한다.
-2.중복 요소들 제거하기
-3.노출이 우려되는 요소들은 상수화 처리하기.
-
+<ol>
+<li> apiurl/ apikey등은 main page, app.js가 아닌 다른 페이지에서 따로 관리한다.</li>
+<li>중복 요소들 제거하기</li>
+<li>노출이 우려되는 요소들은 상수화 처리하기.</li>
+</ol>
 
 ## Getting Started
 
