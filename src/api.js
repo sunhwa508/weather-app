@@ -26,3 +26,12 @@ export const searchApi = {
       },
     }),
 };
+
+export const detailApi = {
+  detailApi: (cityId) =>
+    api.get("/", {
+      params: {
+        id: cityId,
+      },
+    }),
+};

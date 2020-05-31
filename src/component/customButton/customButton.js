@@ -39,3 +39,12 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(null, mapDispatchToProps)(Button);
+
+
+
+// styled.button with the id of "sc-fznZeY" 
+// has been created dynamically.
+// You may see this warning because you've called 
+// styled inside another component.
+// To resolve this only create new StyledComponents 
+// outside of any render method and function component. 

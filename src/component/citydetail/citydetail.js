@@ -1,30 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import axios from "axios";
+import { detailApi } from "../../api";
 import { StyledDetail, StyledButton } from "./citydetail.styled";
 export default function CityDetail() {
   const [card, setCard] = useState();
   const history = useHistory();
   const { cityId } = useParams();
-  const api = axios.create({
-    baseURL: "https://api.openweathermap.org/data/2.5/weather/",
-    params: {
-      appid: "c464608a0909ecb7b521f7e1cde53200",
-      units: "metric",
-    },
-  });
-
   function handleClick() {
     history.go(-1);
   }
 
   useEffect(() => {
-    api
-      .get("/", {
-        params: {
-          id: cityId,
-        },
-      })
+    detailApi
+      .detailApi(cityId)
       .then((data) => {
         setCard(data.data);
       })

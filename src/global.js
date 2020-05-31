@@ -9,8 +9,9 @@ export const GlobalStyles = createGlobalStyle`
   *, *::after, *::before {
     box-sizing: border-box;
   }
-  p,h2,h1,button{
+  p,h2,h1,button,input{
     font-family: 'Roboto', sans-serif;
+    outline: none
   }
   body {
     align-items: center;
