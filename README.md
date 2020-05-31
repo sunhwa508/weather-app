@@ -181,8 +181,8 @@ export const darkTheme = {
 
 이렇게 정의함으로써, 갯수와 제한없이 2초이내로 icon자리에 들어가는 모든 가능성들은 한번의 수정으로 전체를 다 바꿀 수 있게 되었다 ^^ <br />
 
-<code>
- 
+<code><pre>
+
  const icon = theme === "light" ? lightTheme.icon : darkTheme.icon;
   return (
     <StyledMenu toggle={toggle}>
@@ -225,6 +225,5 @@ export const darkTheme = {
         </Link>
       )}
     </StyledMenu>
-    
-</code>
+</pre></code>
 ## ✔Acknowledgments
