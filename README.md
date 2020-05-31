@@ -80,8 +80,8 @@ export const searchApi = {
 🔐
 <div>
  
-![image](https://user-images.githubusercontent.com/61695175/83343934-b1d2c680-a33b-11ea-8b49-c0241a190ca9.png)
-![image](https://user-images.githubusercontent.com/61695175/83343940-c6af5a00-a33b-11ea-9c71-90349ae1ad6d.png)
+ <img src="https://user-images.githubusercontent.com/61695175/83343934-b1d2c680-a33b-11ea-8b49-c0241a190ca9.png" width="200" height="auto">
+<img src="https://user-images.githubusercontent.com/61695175/83343940-c6af5a00-a33b-11ea-9c71-90349ae1ad6d.png" width="200" height="auto">
 
 </div>
 
