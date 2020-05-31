@@ -31,7 +31,7 @@ $ git checkout nameofbranch<br/>
 
 ## Getting Started
 
-### ✔apiurl/ apikey 관리 컴포넌트
+### ⛅1.apiurl/ apikey 관리 컴포넌트⛅
 
 코드리뷰를 받은 후,, 내 코드는 내가 봐도 참 답이 없는 코드였다<br/>
 쓸대없이 axios통신하는 컴포넌트가 3개, url과 내apiId다 이곳저곳에서 남발되고 있었던 것,<br/>
@@ -103,7 +103,127 @@ export const detailApi = {
 
 </div>
 
+## ⛅2. 불필요한 중복요소 상수로 묶어 한꺼번에 처리하기⛅
+**문제의 코드 발견
+그때는 보이지 않았던, 이 코드의 문제점. 지금과 같이 간단히 10개 이하의 코드라면 ,, 몇초차이나지 않을것이다.<br/>
+이러한 코드가 10,000있다고 상상해보자. 아이콘변경 문의가 온다면 아마 그날은 ctrl+c, ctrl+v를 하며 하루를 지샐것이다...😂<br/>
+
+그래서 미리미리연습해두자, 불필요한 요소들 상수로 묶어 관리하기 theme같은 방법으로 말이다.
+
+<code><pre>
+    <StyledMenu toggle={toggle}>
+      <Link to="/" style={{ fontSize: "2rem" }}>
+        <span role="img" aria-label="HOME">
+          {theme === "light" ? "✿" : "🌚 "}
+        </span>
+        HOME
+      </Link>
+      <Link to="/add" style={{ fontSize: "2rem" }}>
+        <span role="img" aria-label="SEARCH">
+          {theme === "light" ? "✿" : "🌚 "}
+        </span>
+        SEARCH
+      </Link>
+      <Link to="/detail" style={{ fontSize: "2rem" }}>
+        <span role="img" aria-label="DETAIL">
+          {theme === "light" ? "✿" : "🌚 "}
+        </span>
+        DETAIL
+      </Link>
+
+      {currentUser ? (
+        <Link
+          as="div"
+          onClick={() => auth.signOut()}
+          style={{ fontSize: "2rem" }}
+          to="/"
+        >
+          <span role="img" aria-label="LOGIN">
+            {theme === "light" ? "✿" : "🌚 "}
+          </span>
+          LOGOUT
+        </Link>
+      ) : (
+        <Link to="/signin" style={{ fontSize: "2rem" }}>
+          <span role="img" aria-label="LOGIN">
+            {theme === "light" ? "✿" : "🌚 "}
+          </span>
+          LOGIN
+        </Link>
+      )}
+    </StyledMenu>
+</pre></code>
+
+간단히 기존에 darkmode를 구현하기 위해 생성해두었던 theme.js 에 icon을 하나 추가한다. 
+
+<code><pre>
+
+export const lightTheme = {
+  body: "#ffc8c8",
+  text: "#162447",
+  toggleBorder: "#FFF",
+  gradient: "linear-gradient(#39598A, #79D7ED)",
+  mobile: "576px",
+  Hover: "#d63447",
+  icon: "🌤 ",
+};
+
+export const darkTheme = {
+  body: "#444f5a",
+  text: "#f4eeff",
+  toggleBorder: "#6B8096",
+  gradient: "linear-gradient(#091236, #1E215D)",
+  mobile: "576px",
+  Hover: "#d63547",
+  icon: "☁ ",
+};
+</pre></code>
+
+이렇게 정의함으로써, 갯수와 제한없이 2초이내로 icon자리에 들어가는 모든 가능성들은 한번의 수정으로 전체를 다 바꿀 수 있게 되었다 ^^ <br />
+
+<code><pre>
+ const icon = theme === "light" ? lightTheme.icon : darkTheme.icon;
+
+  return (
+    <StyledMenu toggle={toggle}>
+      <Link to="/" style={{ fontSize: "2rem" }}>
+        <span role="img" aria-label="HOME">
+          {icon}
+        </span>
+        HOME
+      </Link>
+      <Link to="/add" style={{ fontSize: "2rem" }}>
+        <span role="img" aria-label="SEARCH">
+          {icon}
+        </span>
+        SEARCH
+      </Link>
+      <Link to="/detail" style={{ fontSize: "2rem" }}>
+        <span role="img" aria-label="DETAIL">
+          {icon}
+        </span>
+        DETAIL
+      </Link>
+      {currentUser ? (
+        <Link
+          as="div"
+          onClick={() => auth.signOut()}
+          style={{ fontSize: "2rem" }}
+          to="/"
+        >
+          <span role="img" aria-label="LOGIN">
+            {icon}
+          </span>
+          LOGOUT
+        </Link>
+      ) : (
+        <Link to="/signin" style={{ fontSize: "2rem" }}>
+          <span role="img" aria-label="LOGIN">
+            {icon}
+          </span>
+          LOGIN
+        </Link>
+      )}
+    </StyledMenu>
+</pre></code>
 ## ✔Acknowledgments
-
-
-
