@@ -225,7 +225,7 @@ yarn deploy를 통해 deploy해준다.
 //yarn 과 npm의 차이 npm 은 npm run deploy 처럼 run을 해주는 반면 yarn은 deploy만 해주면 된다.
 ### `yarn build` fails to minify
 
-## ✔refactoryingCode는
+## ✔refactoryingCode
 아직 유지보수중인 refactoryingCode는 이곳으로<br/>
 https://github.com/sunhwa508/weather-app/blob/refactoringCode/README.md
 
