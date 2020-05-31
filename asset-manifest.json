@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/weather-app/static/css/main.e13b41f9.chunk.css",
-    "main.js": "/weather-app/static/js/main.28367b9e.chunk.js",
-    "main.js.map": "/weather-app/static/js/main.28367b9e.chunk.js.map",
+    "main.css": "/weather-app/static/css/main.6d8b9438.chunk.css",
+    "main.js": "/weather-app/static/js/main.c59a37ed.chunk.js",
+    "main.js.map": "/weather-app/static/js/main.c59a37ed.chunk.js.map",
     "runtime-main.js": "/weather-app/static/js/runtime-main.9d51de0a.js",
     "runtime-main.js.map": "/weather-app/static/js/runtime-main.9d51de0a.js.map",
-    "static/js/2.b9c90190.chunk.js": "/weather-app/static/js/2.b9c90190.chunk.js",
-    "static/js/2.b9c90190.chunk.js.map": "/weather-app/static/js/2.b9c90190.chunk.js.map",
+    "static/js/2.7ea3f6bd.chunk.js": "/weather-app/static/js/2.7ea3f6bd.chunk.js",
+    "static/js/2.7ea3f6bd.chunk.js.map": "/weather-app/static/js/2.7ea3f6bd.chunk.js.map",
     "index.html": "/weather-app/index.html",
-    "precache-manifest.a0a1121f4860d700cbcf1323ff2ad229.js": "/weather-app/precache-manifest.a0a1121f4860d700cbcf1323ff2ad229.js",
+    "precache-manifest.d22d809b5a2016fdeab7f3ceaead1925.js": "/weather-app/precache-manifest.d22d809b5a2016fdeab7f3ceaead1925.js",
     "service-worker.js": "/weather-app/service-worker.js",
-    "static/css/main.e13b41f9.chunk.css.map": "/weather-app/static/css/main.e13b41f9.chunk.css.map",
-    "static/js/2.b9c90190.chunk.js.LICENSE.txt": "/weather-app/static/js/2.b9c90190.chunk.js.LICENSE.txt"
+    "static/css/main.6d8b9438.chunk.css.map": "/weather-app/static/css/main.6d8b9438.chunk.css.map",
+    "static/js/2.7ea3f6bd.chunk.js.LICENSE.txt": "/weather-app/static/js/2.7ea3f6bd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9d51de0a.js",
-    "static/js/2.b9c90190.chunk.js",
-    "static/css/main.e13b41f9.chunk.css",
-    "static/js/main.28367b9e.chunk.js"
+    "static/js/2.7ea3f6bd.chunk.js",
+    "static/css/main.6d8b9438.chunk.css",
+    "static/js/main.c59a37ed.chunk.js"
   ]
 }
