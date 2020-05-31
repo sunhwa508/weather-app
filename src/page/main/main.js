@@ -45,10 +45,8 @@ export default function Main() {
       )}
 
       {/* <h1 style={{ color: "#f67280" }}>TODAY'S WEATHER</h1> */}
-      {location.main && location.main.temp && latitude && longitude ? (
+      {location.main && location.main.temp && latitude && longitude && (
         <WeatherCard location={location} city={city} />
-      ) : (
-        false
       )}
     </>
   );
