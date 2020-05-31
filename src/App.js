@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import React, { useState, useEffect, useRef } from "react";
 import { useOnClickOutside } from "./hooks";
 import Main from "./page/main/main";
@@ -20,7 +19,7 @@ import Header from "./component/header/header";
 import Detail from "./page/details/details";
 import LoginSignup from "./page/loginSignup/loginSignup";
 import { auth, createUserProfileDocument } from "./firebase.utils";
-
+import "./App.css";
 function App() {
   const [toggle, toggler] = useState(false);
   const [path, setPath] = useState("/");
@@ -71,24 +70,14 @@ function App() {
     });
   }, [history.location.pathname]);
 
-  const Btnstyle = styled.button`
-    font-size: 2rem;
-    background-color: white;
-    border: none;
-    position: fixed;
-    top: 2%;
-    right: 5%;
-    z-index: 3;
-    cursor: pointer;
-  `;
   return (
     <>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <GlobalStyles />
         <Header />
-        <Btnstyle onClick={toggleTheme}>
+        <button className="darkmode" onClick={toggleTheme}>
           {theme === "light" ? "🌛" : "🌞"}
-        </Btnstyle>
+        </button>
         <div ref={node}>
           <Burger toggle={toggle} toggler={toggler} />
           <Sidebar

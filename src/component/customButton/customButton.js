@@ -1,8 +1,7 @@
 import React from "react";
-import { ButtonDetail } from "./customButton.styled";
 import { connect } from "react-redux";
 import { addCart, removeCart } from "../../redux/action";
-
+import "./custombtn.css";
 function Button({ addCart, location, cart, children, isSaveCity, ...props }) {
   function handleSave(event) {
     event.stopPropagation();
@@ -20,13 +19,13 @@ function Button({ addCart, location, cart, children, isSaveCity, ...props }) {
   return (
     <>
       {isSaveCity ? (
-        <ButtonDetail {...props} onClick={handleRemove}>
+        <button className="custombtn" {...props} onClick={handleRemove}>
           {children}
-        </ButtonDetail>
+        </button>
       ) : (
-        <ButtonDetail {...props} onClick={handleSave}>
+        <button className="custombtn" {...props} onClick={handleSave}>
           {children}
-        </ButtonDetail>
+        </button>
       )}
     </>
   );
