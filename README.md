@@ -35,6 +35,8 @@ $ git checkout nameofbranch<br/>
 <div>
 ![image]<img src="https://user-images.githubusercontent.com/61695175/83343730-15a7c000-a339-11ea-84bc-a157adf8775d.png" width="200" height="400">
 ![image]<img src="https://user-images.githubusercontent.com/61695175/83343752-51428a00-a339-11ea-9c0f-4d1c9022af0f.png" width="200" height="400">
+ ![image]<img src="https://user-images.githubusercontent.com/61695175/83345005-1cd6ca00-a349-11ea-8669-f8e179c29b9c.png" width="200" height="400">
+
 <div/>
 기존 메인화면과 Search페이지에 따로따로 관리되던 axios와 중복되어 있던 url,
 코드리뷰를 받던 중 이런식으로 코드를 짜면 노출에 굉장히 위헙하며 유지보수에도 아주 취약하다는 리뷰를 들었기에,
@@ -72,6 +74,16 @@ export const searchApi = {
     }),
 };
 
+export const detailApi = {
+  detailApi: (cityId) =>
+    api.get("/", {
+      params: {
+        id: cityId,
+      },
+    }),
+};
+
+
 </pre></code>
 
 이렇게 api들을 한군데 모아두니 상대적으로 무겁게 돌아갈수 있는 axios들을 이곳저곳에서 import할 필요도 없고, 
@@ -81,6 +93,8 @@ export const searchApi = {
 <div>
  <img src="https://user-images.githubusercontent.com/61695175/83343934-b1d2c680-a33b-11ea-8b49-c0241a190ca9.png" width=auto height="200">
 <img src="https://user-images.githubusercontent.com/61695175/83343940-c6af5a00-a33b-11ea-9c71-90349ae1ad6d.png" width=auto height="200">
+<img src="https://user-images.githubusercontent.com/61695175/83345054-9a023f00-a349-11ea-8036-42c6d1cfce8f.png" width=auto height="200">
+
 </div>
 
 ## ✔Acknowledgments
