@@ -1,6 +1,6 @@
 
 
-<h1>코드 리팩토링/h1>
+<h1>코드 리팩토링</h1>
 <h2>DEMO : https://sunhwa508.github.io/weather-app </h2>
 <div><center>
 <img src="https://user-images.githubusercontent.com/61695175/83249227-3b21b600-a1e1-11ea-8ede-745554b26b07.png" width="200" height="400">
