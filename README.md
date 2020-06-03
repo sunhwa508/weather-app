@@ -74,7 +74,7 @@ details 날씨의 디테일을 나타낼 페이지도 따로 만들어 준다.
  
 ## ✔openweathermap API, navigator.geolocation.getCurrentPosition(handleGeoSucces) 사용자 위치정보 얻기
 우선 앱이 실행되는 동시에 user의 위치탐색 권한을 얻음으로써 user의 위치 (lat,lon) 데이터를 얻는다<br/>
-이렇게 얻은 데이터는 즉지 weather api의 params로 적용되어 위치의 날씨를 가져올수 있게 된다.<br/>
+이렇게 얻은 데이터는 즉시 weather api의 params로 적용되어 위치의 날씨를 가져올수 있게 된다.<br/>
 이 또한 useEffect훅을 이용해, 위치가 바뀔때바다 업로드 될 수 있도록 설정해주었다.<br/>
 <pre><code>
  useEffect(() => {
