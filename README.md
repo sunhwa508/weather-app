@@ -53,7 +53,7 @@ Login/SignUp 페이지 (로그인과 회원가입부분을 한 페이지에 구�
 details 날씨의 디테일을 나타낼 페이지도 따로 만들어 준다.
 
 이제 이 페이지들에 router을 연결할 것이기 때문에 각각의 path를 갖게 될것이다. 이렇게 ⬇⬇  
- 
+ ```javascript
      <Switch>
          <Route exact path="/">
             <Main />
@@ -71,11 +71,12 @@ details 날씨의 디테일을 나타낼 페이지도 따로 만들어 준다.
             <CityDetail />
           </Route>
         </Switch>
- 
+ ```
 ## ✔openweathermap API, navigator.geolocation.getCurrentPosition(handleGeoSucces) 사용자 위치정보 얻기
 우선 앱이 실행되는 동시에 user의 위치탐색 권한을 얻음으로써 user의 위치 (lat,lon) 데이터를 얻는다<br/>
 이렇게 얻은 데이터는 즉시 weather api의 params로 적용되어 위치의 날씨를 가져올수 있게 된다.<br/>
 이 또한 useEffect훅을 이용해, 위치가 바뀔때바다 업로드 될 수 있도록 설정해주었다.<br/>
+```javascript
 <pre><code>
  useEffect(() => {
     navigator.geolocation.getCurrentPosition(handleGeoSucces);
@@ -94,6 +95,7 @@ details 날씨의 디테일을 나타낼 페이지도 따로 만들어 준다.
       });
   }, [latitude, longitude]);
 </pre></code>
+```
 
 ## ✔slider구현, slider외 스크린 터치(active)시 slider 상태 변경하기
 그동안 (햄버거)버튼을 눌러 슬라이드를 보이고 숨기는 기능은 많이 구현해보았지만, <br/>
@@ -103,6 +105,7 @@ details 날씨의 디테일을 나타낼 페이지도 따로 만들어 준다.
 이 기능을 만들기 위해 hook을 따로 제작해 주었다 </br>
 (arrow 함수선언문으로 작성하여 호이스팅 문제를 피할 수 있게 해준다.) <br/>
 
+```javascript
 <pre><code>
 export const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
@@ -119,10 +122,11 @@ export const useOnClickOutside = (ref, handler) => {
   }, [ref, handler]);
 };
 </pre></code>
+```
 
 ##App.js
 //(useRef 노드를 burger , sidebar components에 감싸주어, 앞서 만든 customhooks의 이벤트타켓을 인지할 수 있게 해준다. <br/>
-
+```javascript
   <div ref={node}>
           <Burger toggle={toggle} toggler={toggler} />
           <Sidebar
@@ -132,12 +136,12 @@ export const useOnClickOutside = (ref, handler) => {
             theme={theme}
           />
         </div>
-
-
+```
 
 ## using styled-components GlobalStyle을 이용한 DakrMode구현
 styled-components 에서 제공하는 createGlobalStyle을 이용하면 아주 쉽게 darkmode를 설정할수있다.  <br/>
 
+```javascript
 Theme.js<br/>
 export const lightTheme = {<br/>
   body: "#ffc8c8",<br/>
@@ -171,7 +175,7 @@ export const GlobalStyles = createGlobalStyle<br/>
     }<br/>
   };<br/>
 <br/>
-
+```
 
 ## signin/signup부분은 이곳을 참고하세요 😗😗
 https://github.com/sunhwa508/E-commercial
@@ -195,6 +199,7 @@ yarn deploy를 통해 deploy해준다.  <br/>
 
 
 ## ✔Versioning
+```javascript
 <ul>
   <li>"axios": "0.18.0",</li>
     <li>"firebase": "^7.14.5",</li>
@@ -212,6 +217,7 @@ yarn deploy를 통해 deploy해준다.  <br/>
   <li>  "styled-components": "^5.1.0"</li>
 </ul>
 
+```
 
 ## ✔Deployment
 "homepage": https://sunhwa508.github.io/weather-app/
