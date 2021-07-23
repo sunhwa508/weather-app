@@ -199,25 +199,24 @@ yarn deploy를 통해 deploy해준다.  <br/>
 
 
 ## ✔Versioning
-```javascript
+
 <ul>
   <li>"axios": "0.18.0",</li>
-    <li>"firebase": "^7.14.5",</li>
-    <li>"firebase-tools": "^8.4.0",</li>
-    <li>"gh-pages": "^2.2.0",</li>
-   <li> "node-sass": "^4.14.1",</li>
-   <li> "react": "^16.13.1",</li>
-   <li> "react-animated-weather": "^4.0.1",//weatherAPI에서 제공된 이미지의 퀄리더 보강으로,, 추가한 npm 라이브러리</li> 
-   <li> "react-dom": "^16.13.1",</li>
-   <li> "react-redux": "^7.2.0",</li>
+  <li>"firebase": "^7.14.5",</li>
+  <li>"firebase-tools": "^8.4.0",</li>
+  <li>"gh-pages": "^2.2.0",</li>
+  <li> "node-sass": "^4.14.1",</li>
+  <li> "react": "^16.13.1",</li>
+  <li> "react-animated-weather": "^4.0.1",//weatherAPI에서 제공된 이미지의 퀄리더 보강으로,, 추가한 npm 라이브러리</li> 
+  <li> "react-dom": "^16.13.1",</li>
+  <li> "react-redux": "^7.2.0",</li>
   <li>  "react-router-dom": "^5.2.0",</li>
   <li>  "react-scripts": "3.4.1",</li>
-   <li> "redux": "^4.0.5",</li>
-   <li> "scss": "^0.2.4",</li>
+  <li> "redux": "^4.0.5",</li>
+  <li> "scss": "^0.2.4",</li>
   <li>  "styled-components": "^5.1.0"</li>
 </ul>
 
-```
 
 ## ✔Deployment
 "homepage": https://sunhwa508.github.io/weather-app/
