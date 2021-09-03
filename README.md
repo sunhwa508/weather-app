@@ -124,7 +124,7 @@ export const useOnClickOutside = (ref, handler) => {
 </pre></code>
 ```
 
-##App.js
+## App.js
 //(useRef 노드를 burger , sidebar components에 감싸주어, 앞서 만든 customhooks의 이벤트타켓을 인지할 수 있게 해준다. <br/>
 ```javascript
   <div ref={node}>
@@ -138,7 +138,7 @@ export const useOnClickOutside = (ref, handler) => {
         </div>
 ```
 
-## using styled-components GlobalStyle을 이용한 DakrMode구현
+## using styled-components GlobalStyle을 이용한 DarkMode구현
 styled-components 에서 제공하는 createGlobalStyle을 이용하면 아주 쉽게 darkmode를 설정할수있다.  <br/>
 
 ```javascript
